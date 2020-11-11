@@ -15,6 +15,7 @@ public class Main {
 
         Function <String, List<String>> function = string -> Arrays.stream(string.split(" "))
                 .sorted(Comparator.naturalOrder())
+                .distinct()
                 .collect(Collectors.toList()); //используем детерминированную функцию и стримы (монады) а так же
         //лямбда-выражения
         System.out.println(function.apply(s1).toString());
